@@ -24,7 +24,7 @@ Run and start the docker to start developing
 .. code-block:: console
 
    $ docker build --tag design-patterns .
-   $ docker run -it -v %cd%:/root/2022-10-24/ --name design_patterns_image design-patterns:latest
+   $ docker run -it --rm -v %cd%:/root/2022-10-24/ --name design_patterns_image design-patterns:latest
 
 Build
 -----
