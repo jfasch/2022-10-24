@@ -11,6 +11,12 @@ Get And Initialize
    $ git submodule init
    $ git submodule update
 
+
+Run and start the docker to start developing
+.. code-block:: console
+    $ docker build --tag design-patterns .
+    $ docker run -it -v %cd%:/root/2022-10-24/ --name design_patterns_image design-patterns:latest
+
 Build
 -----
 
@@ -53,7 +59,7 @@ has to be built.
 
 .. code-block:: console
 
-   $ make
+   $ make -j4
    [  7%] Building CXX object googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
    [ 15%] Linking CXX static library ../../lib/libgtest.a
    [ 15%] Built target gtest
