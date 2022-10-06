@@ -1,6 +1,13 @@
 How To ...
 ==========
 
+Dependencies
+------------------
+
+* git (obviously)
+* docker (for running it in a common environment)
+
+
 Get And Initialize
 ------------------
 
@@ -13,14 +20,16 @@ Get And Initialize
 
 
 Run and start the docker to start developing
+
 .. code-block:: console
-    $ docker build --tag design-patterns .
-    $ docker run -it -v %cd%:/root/2022-10-24/ --name design_patterns_image design-patterns:latest
+
+   $ docker build --tag design-patterns .
+   $ docker run -it -v %cd%:/root/2022-10-24/ --name design_patterns_image design-patterns:latest
 
 Build
 -----
 
-Create build directory, and change into it ...
+Create build directory, and change into it.
 
 .. code-block:: console
 
@@ -115,3 +124,17 @@ built. Run that,
     1 FAILED TEST
    
 You see one failing test, and one that passes.
+
+Debug Tests
+---------
+
+VSCode
+^^^^^^^^^^^^^^^^
+
+For VSCode there is already a running debug configuration. Add a breakpoint in the file ./livehacking/hello.cpp and start the debug.
+The system should automatically stop at the breakpoint.
+
+Eclipse
+^^^^^^^^^^^^^^^^
+
+???
