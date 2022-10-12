@@ -18,7 +18,7 @@ Get And Initialize
    $ git submodule init
    $ git submodule update
 
-
+VSCode users may skip the next calls and walk on to the VSCode chapter down below.
 Run and start the docker to start developing
 
 .. code-block:: console
@@ -131,8 +131,21 @@ Debug Tests
 VSCode
 ^^^^^^^^^^^^^^^^
 
-For VSCode there is already a running debug configuration. Add a breakpoint in the file ./livehacking/hello.cpp and start the debug.
-The system should automatically stop at the breakpoint.
+When using VSCode as the preferred IDE, there is already an development kit generated.
+After cloning and updating the repository, you can open the folder with VSCode.
+During opening there might raise up a pop up, which mentioned, that a development container configuration is present. 
+
+Otherwise you can press **F1 -> Remote Containers: Rebuild and Reopen in Container**.
+This command will create a new VSCode instance **inside** the provided docker image.
+Furthermore it will automatically install some predefined extensions for VSCode. 
+
+When it is finished, you can open a new terminal and inside the terminal you will recognise a running linux distribution.
+With the preinstalled extensions it is now pretty easy to configure, build and run the relevant targets. 
+
+For configuring the cmake project you only have to press **F1 -> CMake: Configure**.
+Building the project on the other hand is **F1 -> CMake: Build**.
+
+For running a requested application you have to change to the folder */tmp/2022-10-24/* and navigate to the application. 
 
 Eclipse
 ^^^^^^^^^^^^^^^^
