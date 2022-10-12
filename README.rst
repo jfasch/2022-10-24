@@ -1,6 +1,13 @@
 How To ...
 ==========
 
+Dependencies
+------------------
+
+* git (obviously)
+* docker (for running it in a common environment)
+
+
 Get And Initialize
 ------------------
 
@@ -11,10 +18,18 @@ Get And Initialize
    $ git submodule init
    $ git submodule update
 
+VSCode users may skip the next calls and walk on to the VSCode chapter down below.
+Run and start the docker to start developing
+
+.. code-block:: console
+
+   $ docker build --tag design-patterns .
+   $ docker run -it --rm -v %cd%:/root/2022-10-24/ --name design_patterns_image design-patterns:latest
+
 Build
 -----
 
-Create build directory, and change into it ...
+Create build directory, and change into it.
 
 .. code-block:: console
 
@@ -53,7 +68,7 @@ has to be built.
 
 .. code-block:: console
 
-   $ make
+   $ make -j4
    [  7%] Building CXX object googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
    [ 15%] Linking CXX static library ../../lib/libgtest.a
    [ 15%] Built target gtest
@@ -109,3 +124,30 @@ built. Run that,
     1 FAILED TEST
    
 You see one failing test, and one that passes.
+
+Debug Tests
+---------
+
+VSCode
+^^^^^^^^^^^^^^^^
+
+When using VSCode as the preferred IDE, there is already an development kit generated.
+After cloning and updating the repository, you can open the folder with VSCode.
+During opening there might raise up a pop up, which mentioned, that a development container configuration is present. 
+
+Otherwise you can press **F1 -> Remote Containers: Rebuild and Reopen in Container**.
+This command will create a new VSCode instance **inside** the provided docker image.
+Furthermore it will automatically install some predefined extensions for VSCode. 
+
+When it is finished, you can open a new terminal and inside the terminal you will recognise a running linux distribution.
+With the preinstalled extensions it is now pretty easy to configure, build and run the relevant targets. 
+
+For configuring the cmake project you only have to press **F1 -> CMake: Configure**.
+Building the project on the other hand is **F1 -> CMake: Build**.
+
+For running a requested application you have to change to the folder */tmp/2022-10-24/* and navigate to the application. 
+
+Eclipse
+^^^^^^^^^^^^^^^^
+
+???
