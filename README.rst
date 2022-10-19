@@ -131,6 +131,10 @@ Debug Tests
 VSCode
 ^^^^^^^^^^^^^^^^
 
+**Necessary Extension: Dev Containers**
+
+*Hint:* The commands concerning "Remote Containers" can also appear on the system as "Dev Containers". 
+
 When using VSCode as the preferred IDE, there is already an development kit generated.
 After cloning and updating the repository, you can open the folder with VSCode.
 During opening there might raise up a pop up, which mentioned, that a development container configuration is present. 
