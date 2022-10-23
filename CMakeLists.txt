@@ -14,5 +14,8 @@ endif()
 ENABLE_TESTING()
 
 ADD_SUBDIRECTORY(googletest)
-ADD_SUBDIRECTORY(exercises)
-ADD_SUBDIRECTORY(livehacking)
+
+ADD_SUBDIRECTORY(library)
+ADD_SUBDIRECTORY(tests)
+ADD_SUBDIRECTORY(singleton)
+
