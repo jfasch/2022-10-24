@@ -19,3 +19,5 @@ ADD_SUBDIRECTORY(library)
 ADD_SUBDIRECTORY(tests)
 ADD_SUBDIRECTORY(singleton)
 
+ADD_SUBDIRECTORY(livehacking)
+
