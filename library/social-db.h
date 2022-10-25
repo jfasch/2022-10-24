@@ -39,6 +39,8 @@ public:
 
     size_t size() const { return _db.size(); }
     void insert(const std::string& svnr, const std::string& firstname, const std::string& lastname);
+
+    // throws NotFound when blah ...
     const Person& find(const std::string& svnr) const;
     void drop() { _db.clear(); }
 

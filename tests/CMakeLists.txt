@@ -9,6 +9,7 @@ ADD_EXECUTABLE(
   # </starting point>
 
   composite-suite-basic.cpp
+  command-suite.cpp
 )
 
 TARGET_LINK_LIBRARIES(
