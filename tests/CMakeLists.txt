@@ -8,7 +8,7 @@ ADD_EXECUTABLE(
   social-db-suite.cpp
   # </starting point>
 
-  proxy-remote-suite.cpp
+  composite-suite-basic.cpp
 )
 
 TARGET_LINK_LIBRARIES(
