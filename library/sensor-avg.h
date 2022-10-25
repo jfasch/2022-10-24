@@ -1,19 +1,24 @@
 #pragma once
 
 #include <vector>
+#include <initializer_list>
 
 
-class AveragingSensor
+class AveragingSensor : public Sensor
 {
 public:
+    AveragingSensor() = default;
+    AveragingSensor(std::initializer_list<Sensor*> init)
+    : _sensors(init) {}
+
     void add(Sensor* s)
     {
         _sensors.push_back(s);
     }
-    double get_temperature() {
+    double get_temperature() override {
         double sum = 0;
-        for (std::vector<Sensor*>::const_iterator it=_sensors.begin(); it!=_sensors.end(); it++)
-            sum += (*it)->get_temperature();
+        for (auto elem: _sensors)
+            sum += elem->get_temperature();
         return sum/_sensors.size();
     }
 

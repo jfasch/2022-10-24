@@ -17,3 +17,5 @@ TARGET_LINK_LIBRARIES(
   design-patterns  
   Threads::Threads
 )
+
+ADD_EXECUTABLE(vector-initializer-list vector-initializer-list.cpp)
