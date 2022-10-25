@@ -15,24 +15,14 @@ public:
 
     const std::string& name() const { return _name; }
 
-    void charge(const std::string& id, double euros)
-    {
-        _db[id] += euros;
-    }
-
-    double debt(const std::string& svnr) const
-    {
-        auto found = _db.find(svnr);
-        if (found == _db.end())
-            return 0;
-        return found->second;
-    }
+    virtual void charge(const std::string& id, double euros) = 0;
+    virtual double debt(const std::string& svnr) const = 0;
     
 private:
     std::string _name;
-    std::map<std::string /*svnr*/, double /*debt*/> _db;
 
     static std::unique_ptr<SocialInsurance> _instance;
 
+protected:
     SocialInsurance(const std::string& name) : _name(name) {}
 };
