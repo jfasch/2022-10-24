@@ -46,15 +46,15 @@ private:
 };
 
 template <typename FCN>
-class ArithmeticOperator : public Expression
+class ArithmeticBinaryOperator : public Expression
 {
 public:
-    ArithmeticOperator(Expression& lhs, Expression& rhs)
+    ArithmeticBinaryOperator(Expression& lhs, Expression& rhs)
     : _lhs(lhs), _rhs(rhs) {}
 
     int evaluate() override
     {
-        auto fcn = FCN();
+        FCN fcn;
         return fcn(_lhs.evaluate(), _rhs.evaluate());
     }
 
@@ -63,10 +63,10 @@ private:
     Expression& _rhs;
 };
 
-using Addition = ArithmeticOperator<std::plus<int>>;
-using Subtraction = ArithmeticOperator<std::minus<int>>;
-using Multiplication = ArithmeticOperator<std::multiplies<int>>;
-using Division = ArithmeticOperator<std::divides<int>>;
+using Addition = ArithmeticBinaryOperator<std::plus<int>>;
+using Subtraction = ArithmeticBinaryOperator<std::minus<int>>;
+using Multiplication = ArithmeticBinaryOperator<std::multiplies<int>>;
+using Division = ArithmeticBinaryOperator<std::divides<int>>;
 
 class BinaryOperator : public Expression
 {
