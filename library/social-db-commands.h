@@ -85,3 +85,20 @@ public:
     void result() {}
 };
 
+class SocialDBBulkInsertCommand : public SocialDBCommand
+{
+public:
+    void add(SocialDBInsertCommand c)
+    {
+        _commands.push_back(c);
+    }
+
+    void execute(SocialDB& db) override
+    {
+        for (auto& command: _commands)
+            command.execute(db);
+    }
+
+private:
+    std::vector<SocialDBInsertCommand> _commands;
+};

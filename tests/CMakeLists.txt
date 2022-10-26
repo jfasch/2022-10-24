@@ -10,6 +10,7 @@ ADD_EXECUTABLE(
 
   composite-suite-basic.cpp
   command-suite.cpp
+  interpreter-suite.cpp
 )
 
 TARGET_LINK_LIBRARIES(
