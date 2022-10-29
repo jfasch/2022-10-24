@@ -16,6 +16,11 @@ ADD_EXECUTABLE(
   abstract-factory-suite-vendor2.cpp
 
   factory-suite.cpp
+  observer-suite-register-one.cpp
+  observer-suite-register-many.cpp
+  observer-suite-register-duplicate.cpp
+  observer-suite-unregister.cpp
+  observer-suite-unregister-not-registered.cpp
 )
 
 TARGET_LINK_LIBRARIES(
@@ -30,7 +35,7 @@ ADD_EXECUTABLE(vector-initializer-list vector-initializer-list.cpp)
 
 ADD_EXECUTABLE(sensor-i2c-nonabstract sensor-i2c-nonabstract.cpp)
 TARGET_LINK_LIBRARIES(
-  sensor-i2c-nonabstract  
+  sensor-i2c-nonabstract
   design-patterns  
 )
 
@@ -49,5 +54,14 @@ TARGET_LINK_LIBRARIES(
 ADD_EXECUTABLE(sensor-shared-ptr sensor-shared-ptr.cpp)
 TARGET_LINK_LIBRARIES(
   sensor-shared-ptr
+  design-patterns  
+)
+
+ADD_EXECUTABLE(visitor visitor.cpp)
+
+
+ADD_EXECUTABLE(heizung heizung.cpp)
+TARGET_LINK_LIBRARIES(
+  heizung
   design-patterns  
 )
